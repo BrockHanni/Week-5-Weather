@@ -1,6 +1,8 @@
-# Week-5-Weather
+# Week-6-Weather
 Responsive 5-day weather app using OpenWeather API
 
+
+# User Story
 
 AS A traveler
 
@@ -9,7 +11,7 @@ I WANT to see the weather outlook for multiple cities
 SO THAT I can plan a trip accordingly
 
 
-# acceptance criteria
+# Acceptance criteria
 
 GIVEN a weather dashboard with form inputs
 
