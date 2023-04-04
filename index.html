@@ -17,12 +17,16 @@
     <br>
     <div id="cityList">
         <h2>City dropdown</h2>
-        <p>This will be the section with saved search cites</p>
         <form>
             <label for="search">Search for a city:</label>
             <input type="text" id="searchvalue" placeholder="Enter a city name">
             <button id="searchbtn">Search</button>
         </form>
+        <div id="searchHistory">
+            <div>Recent Searches: </div>
+            <div id="historyButtons"></div>
+        </div>
+
     </div>
     <div id="dataCard">
         <h2 id="cityName"></h2>
@@ -32,37 +36,39 @@
         <div id="cityDataCardWind"></div>
     </div>
     <div id="cityforecast">
-        <h2>5-Day forcast</h2>
+        <div id="forcastName">
+            <h2>5 Day Forcast</h2>
+        </div>
         <div id="fivedayforecast">
-           <section id="dayOne">
+           <section id="dayOne" class="forecastCard">
                 <div id="dayOneDate"></div>
                 <div id="dayOneWeather"></div>
                 <div id="dayOneLow"></div>
                 <div id="dayOneHigh"></div>
            </section>
            <br>
-           <section id="dayTwo">
+           <section id="dayTwo" class="forecastCard">
                 <div id="dayTwoDate"></div>
                 <div id="dayTwoWeather"></div>
                 <div id="dayTwoLow"></div>
                 <div id="dayTwoHigh"></div>
            </section>
            <br>
-           <section id="dayThree">
+           <section id="dayThree" class="forecastCard">
                 <div id="dayThreeDate"></div>
                 <div id="dayThreeWeather"></div>
                 <div id="dayThreeLow"></div>
                 <div id="dayThreeHigh"></div>
            </section>  
            <br>
-           <section id="dayFour">
+           <section id="dayFour" class="forecastCard">
                 <div id="dayFourDate"></div>
                 <div id="dayFourWeather"></div>
                 <div id="dayFourLow"></div>
                 <div id="dayFourHigh"></div>
            </section>    
            <br>
-           <section id="dayFive">
+           <section id="dayFive" class="forecastCard">
                 <div id="dayFiveDate"></div>
                 <div id="dayFiveWeather"></div>
                 <div id="dayFiveLow"></div>

@@ -1,8 +1,24 @@
-
 var APIKey = "daf6739626e4defe871d6e34398cd5af"
 var searchInput = document.getElementById("searchvalue");
 var searchButton = document.getElementById("searchbtn");
+var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+if (!searchHistory) {
+    searchHistory = [];
+}
 
+function renderHistoryButtons() {
+    while (historyButtons.firstChild) {
+        historyButtons.removeChild(historyButtons.firstChild);
+    }
+    searchHistory.forEach(function(city) {
+        var button = document.createElement('button');
+        button.classList.add('cityButton');
+        button.textContent = city;
+        button.dataset.city = city;
+        historyButtons.appendChild(button);
+    });
+}
+renderHistoryButtons();
 searchButton.addEventListener("click", function(event){
     var city = searchInput.value;
     var weatherurl = ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial")
@@ -90,4 +106,26 @@ searchButton.addEventListener("click", function(event){
       console.log(error)
     });
 
+
+    // Search History settings
+    var historyButtons = document.getElementById('historyButtons');
+    var maxHistoryEntries = 5;
+    searchButton.addEventListener('click', function() {
+        var city = searchInput.value.trim();
+        if (city) {
+            searchHistory.unshift(city);
+            if (searchHistory.length > maxHistoryEntries) {
+                searchHistory.pop();
+            }
+            localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
+            searchInput.value = '';
+            renderHistoryButtons();
+        }
+    });
+    historyButtons.addEventListener('click', function(event) {
+        var button = event.target.closest('.cityButton');
+        if (button) {
+            searchInput.value = button.dataset.city;
+        }
+    });
 });

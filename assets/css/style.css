@@ -6,6 +6,7 @@ body{
 header {
     display: flex;
     align-items: center;
+    text-align: center;
     height: 10vh;
     padding: 10px;
     background-color: #184677;
@@ -31,7 +32,7 @@ header {
     display: flex;
     flex-direction: column;
     width: 63vw;
-    height: 34vh;
+    height: fit-content;
     float:right;
     padding: 10px;
     margin: left 5px;
@@ -40,14 +41,16 @@ header {
     border-style: solid;
     border-radius: 2vw;
     border-width: 2vh;
+    justify-content: space-between;
+    text-align: center;
    
 }
 
 #cityforecast {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 63vw;
-    height: 34vh;
+    height: fit-content;
     float: right;
     margin-top: 10px;
     padding: 10px;
@@ -58,7 +61,46 @@ header {
     border-radius: 2vw;
     border-width: 2vh;
 }
-#fiveDayforecast{
+
+#fivedayforecast {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between; 
+  }
+#fivedayforcast h2{
+    margin-top: 0;
+}
+.forecastCard {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    box-sizing: border-box;
+    height: fit-content;
+    justify-content: center;
+    text-align: center;
+}
+#forcastName{
+    text-align: center;
+}
+
+#historyButtons {
     display: flex;
     flex-direction: column;
-}
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cityButton {
+    background-color: #6caeda;
+    color: black;
+    border-color:#184677;
+    border-radius: 5px;
+    border-width: 1px;
+    padding: 10px;
+    margin-bottom: 5px;
+    width: fit-content;
+    text-align: center;
+  }
