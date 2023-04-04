@@ -13,11 +13,11 @@ When the user enters a city into the search bar-
 
     -The cities next 5 days forecast will appear on the bottom section, containing dates, weather, and high and low temps.
 
-    Here is a link to the deployed app:
+Here is a link to the deployed app:
 
-    https://brockhanni.github.io/Week-6-Weather/
+https://brockhanni.github.io/Week-6-Weather/
 
-    Screenshot of completed app:
-    
-    ![Working app image](assets/images/Screenshot%202023-04-03%20221018.jpg)
+Screenshot of completed app:
+
+![Working app image](assets/images/Screenshot%202023-04-03%20221018.jpg)
 
