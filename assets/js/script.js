@@ -1,11 +1,13 @@
+// my api key
 var APIKey = "daf6739626e4defe871d6e34398cd5af"
+// search button info
 var searchInput = document.getElementById("searchvalue");
 var searchButton = document.getElementById("searchbtn");
 var searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
 if (!searchHistory) {
     searchHistory = [];
 }
-
+// this function renders the recent search from local storage
 function renderHistoryButtons() {
     while (historyButtons.firstChild) {
         historyButtons.removeChild(historyButtons.firstChild);
@@ -19,11 +21,14 @@ function renderHistoryButtons() {
     });
 }
 renderHistoryButtons();
+// this function starts when the search button is clicked
 searchButton.addEventListener("click", function(event){
     var city = searchInput.value;
+    // my custom URLs, one for the weather, and week forecast, each with user input cites, and my APIKey
     var weatherurl = ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial")
     var forecastUrl = ("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey + "&units=imperial")
     event.preventDefault()
+    // fetching first API
     fetch(weatherurl)
     .then(response => response.json())
     .then(data => {
@@ -42,7 +47,7 @@ searchButton.addEventListener("click", function(event){
     .catch(error => {
       console.log(error)
     });
-
+    // fetching second API
     fetch(forecastUrl)
     .then(response => response.json())
     .then(data => {
@@ -53,6 +58,7 @@ searchButton.addEventListener("click", function(event){
         var dayOneLow = document.getElementById("dayOneLow")
         var dayOneHigh = document.getElementById("dayOneHigh")
 
+        // using Day.js for correct dates
         dayOneDate.innerHTML = dayjs().format('MMMM-D-YYYY')
         dayOneWeather.innerHTML = (data.list[0].weather[0].main)
         dayOneLow.innerHTML = ("Low: " + data.list[0].main.temp_min + "°F")
