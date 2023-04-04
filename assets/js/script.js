@@ -5,7 +5,7 @@ var searchButton = document.getElementById("searchbtn");
 
 searchButton.addEventListener("click", function(event){
     var city = searchInput.value;
-    var weatherurl = ("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial")
+    var weatherurl = ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=imperial")
 
     event.preventDefault()
     console.log(city);
